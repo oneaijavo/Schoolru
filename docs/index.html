@@ -314,6 +314,55 @@ footer a{color:var(--muted)}
 .paywall-page .ic svg{width:30px;height:30px;fill:#fff}
 .plays{font-size:13.5px;font-weight:600;color:#fff;margin-top:12px;text-align:center;background:rgba(15,40,48,.66);border-radius:999px;padding:7px 16px;display:inline-flex;gap:10px;align-items:center}
 .plays button{border:0;background:var(--buy);color:#fff;border-radius:999px;padding:4px 12px;font-weight:700;font-size:12.5px}
+/* ===== carrera ===== */
+.menu.m4{grid-template-columns:1fr 1fr;width:min(520px,92%)}
+.frame.racing{aspect-ratio:auto;max-height:none;min-height:640px}
+.frame.racing .fl.race{position:relative;min-height:640px}
+.fl.race{padding:58px 18px 18px;gap:9px}
+.track{position:relative;width:min(860px,100%);background:rgba(31,47,53,.55);border:2px solid rgba(255,255,255,.65);border-radius:18px;padding:4px 8px;flex-shrink:0}
+.lane{position:relative;height:38px;border-bottom:2px dashed rgba(255,255,255,.3)}
+.lane:last-of-type{border-bottom:0}
+.lane.me{background:rgba(255,255,255,.12);border-radius:10px}
+.lname{position:absolute;left:6px;top:50%;transform:translateY(-50%);font-size:11.5px;font-weight:700;color:#E8F6F5;width:40px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lane.me .lname{color:#fff}
+.carw{position:absolute;bottom:3px;left:calc(48px + var(--x,0) * (100% - 48px - 66px));width:62px;transition:left .12s linear}
+.car{display:block;width:62px;height:27px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
+.finish{position:absolute;top:4px;bottom:4px;right:58px;width:8px;background:repeating-conic-gradient(#fff 0 25%,#1F2F35 0 50%) 0 0/8px 8px;border-radius:2px}
+.rbox{background:rgba(255,255,255,.96);color:var(--ink);border-radius:20px;padding:10px 16px 12px;width:min(640px,100%);text-align:center;box-shadow:0 10px 30px -14px rgba(0,0,0,.4);flex-shrink:0}
+.rword{font-family:var(--fd);font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:.03em;line-height:1.25;color:#A3B7BC;word-break:break-word}
+.rword span{display:inline-block;border-radius:6px;padding:0 1px}
+.rword .d{color:var(--teal-d)}
+.rword .c{color:var(--ink);background:#FFE7A3;box-shadow:inset 0 -3px 0 #C9862B}
+.rword .sp{color:#C5D3D6;font-weight:400}
+.rword .c.sp{color:#8A6A1F}
+.rword .err{animation:rshake .25s;background:#F6C7BA;box-shadow:inset 0 -3px 0 var(--buy)}
+@keyframes rshake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.rmean{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;font-size:15px;margin-top:2px;color:var(--muted)}
+.rmean .ru{color:var(--ink);font-weight:600}
+.rnext{font-size:12.5px;color:var(--muted);margin-top:4px}
+.rhint{margin:0;font-size:12px;line-height:1.35;color:#F2FBFA;text-align:center;max-width:640px;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.rkb{width:min(640px,100%);display:grid;gap:5px;flex-shrink:0}
+.kr{display:flex;gap:4px;justify-content:center}
+.k{flex:1 1 0;max-width:48px;min-width:0;height:44px;border:0;border-radius:9px;background:rgba(255,255,255,.94);color:var(--ink);box-shadow:0 2px 0 rgba(0,0,0,.28);display:grid;place-items:center;position:relative;padding:0;font:inherit;touch-action:manipulation;cursor:pointer}
+.k b{font-size:17px;font-weight:700;line-height:1}
+.k i{position:absolute;right:4px;top:2px;font-size:9.5px;font-style:normal;color:#7E979D;line-height:1}
+.k.nx{background:#FFE7A3;box-shadow:0 0 0 2px #C9862B,0 2px 0 rgba(0,0,0,.28)}
+.k.hit{background:#BFE6DC}
+.k.bad{background:#F6C7BA}
+.k.space{flex:0 1 320px;max-width:320px;font-size:13px;color:var(--muted)}
+.rcount{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--fd);font-size:110px;font-weight:900;color:#fff;text-shadow:0 6px 24px rgba(0,0,0,.4);pointer-events:none;z-index:4}
+.rcount[hidden]{display:none}
+.rcount.go{font-size:64px;white-space:nowrap}
+.rkb{background:rgba(31,47,53,.32);border-radius:16px;padding:7px}
+@media (max-width:640px){
+  .fl.race{padding:62px 8px 78px;gap:8px}
+  .lane{height:34px}.carw{width:52px;left:calc(44px + var(--x,0) * (100% - 44px - 56px))}.car{width:52px;height:23px}.finish{right:50px}
+  .k{height:46px;border-radius:7px}.k b{font-size:16px}.k i{display:none}.kr{gap:3px}
+  .rhint{display:none}
+  .fl.race .hud{right:100px}
+  .fl.race{padding-top:90px}
+  .rkb{padding:5px}
+}
 @media (max-width:860px){
   .spread{grid-template-columns:1fr;padding:12px}
   .words{grid-template-columns:1fr}
@@ -357,7 +406,7 @@ footer a{color:var(--muted)}
   .site-h{align-items:flex-start}
 }
 /* acento tónico dibujado sobre la vocal (algunas fuentes colocan U+0301 sobre la consonante siguiente) */
-.sv{position:relative;display:inline-block}
+.sv{position:relative;display:inline}
 .sv::after{content:"\00B4";position:absolute;left:50%;top:-.08em;transform:translateX(-30%);font-size:.95em;line-height:1;font-weight:400;pointer-events:none}
 .sv.up::after{top:-.34em}
 </style>
@@ -399,6 +448,7 @@ const RAW = {A1: "\nДо́брый день!|你好！（白天）|¡Buenas tard
 const T={
 zh:{tag:'俄语心流 · 学俄语单词',nav_dict:'词典',nav_lessons:'课程',nav_alpha:'字母',nav_about:'关于',
  t_a:'РУССКИЙ',t_b:'В ПОТОКЕ',t_c:'俄 语 心 流',
+ m_race:'赛车',m_race_s:'打俄语单词，赢得比赛',nav_race:'打字赛车',race_go:'出发！',race_cpm:'字母/分',race_words:'单词',race_err:'错误',race_you:'你',race_next:'接下来',race_space:'空格',race_hint:'用电脑键盘打字：每个键打出同一位置的俄语字母（见下方键盘），也可以直接点按键。ё 可以打成 е。',race_pos:'名次',race_place1:'第一名！',race_place2:'第二名',race_place3:'第三名',race_place4:'第四名，再试一次！',
  m_ru:'俄语',m_ru_s:'看俄语，选意思',m_tr:'中文',m_tr_s:'看中文，选俄语',m_rev:'复习',m_rev_s:'你答错过的词',
  choose:'选择一组单词',lv_lessons:'课程（书）',all:'全部',words:'词',best:'最高分',
  settings:'设置',s_target:'题目显示',s_text:'文字',s_audio:'只听声音',s_stress:'重音符号',s_timer:'计时器',on:'开',off:'关',s_voice:'俄语发音',s_sfx:'音效',close:'继续',
@@ -420,6 +470,7 @@ zh:{tag:'俄语心流 · 学俄语单词',nav_dict:'词典',nav_lessons:'课程'
  content_note:''},
 es:{tag:'Ruso en flujo · vocabulario ruso',nav_dict:'Diccionario',nav_lessons:'Lecciones',nav_alpha:'Alfabeto',nav_about:'Acerca de',
  t_a:'РУССКИЙ',t_b:'В ПОТОКЕ',t_c:'R U S O   E N   F L U J O',
+ m_race:'Carrera',m_race_s:'Escribe en ruso y gana',nav_race:'Carrera',race_go:'¡Ya!',race_cpm:'letras/min',race_words:'Palabras',race_err:'Errores',race_you:'Tú',race_next:'Después',race_space:'espacio',race_hint:'Escribe con tu teclado: cada tecla da la letra rusa de esa posición (mira el teclado de abajo), o toca las teclas. La ё se puede escribir como е.',race_pos:'Puesto',race_place1:'¡Primer puesto!',race_place2:'Segundo puesto',race_place3:'Tercer puesto',race_place4:'Cuarto puesto. ¡Inténtalo otra vez!',
  m_ru:'Ruso',m_ru_s:'Ves ruso, eliges el significado',m_tr:'Español',m_tr_s:'Ves el significado, eliges ruso',m_rev:'Repaso',m_rev_s:'Las palabras que fallaste',
  choose:'Elige un grupo de palabras',lv_lessons:'Lecciones (libro)',all:'Todo',words:'palabras',best:'récord',
  settings:'Ajustes',s_target:'Pregunta',s_text:'Texto',s_audio:'Solo audio',s_stress:'Acento tónico',s_timer:'Temporizador',on:'Sí',off:'No',s_voice:'Voz rusa',s_sfx:'Efectos',close:'Seguir',
@@ -441,6 +492,7 @@ es:{tag:'Ruso en flujo · vocabulario ruso',nav_dict:'Diccionario',nav_lessons:'
  content_note:''},
 en:{tag:'Russian in Flow · learn Russian words',nav_dict:'Dictionary',nav_lessons:'Lessons',nav_alpha:'Alphabet',nav_about:'About',
  t_a:'РУССКИЙ',t_b:'В ПОТОКЕ',t_c:'R U S S I A N   I N   F L O W',
+ m_race:'Race',m_race_s:'Type Russian and win',nav_race:'Typing race',race_go:'Go!',race_cpm:'letters/min',race_words:'Words',race_err:'Errors',race_you:'You',race_next:'Next',race_space:'space',race_hint:'Type on your keyboard: each key gives the Russian letter in that position (see the keyboard below), or tap the keys. You can type ё as е.',race_pos:'Place',race_place1:'1st place!',race_place2:'2nd place',race_place3:'3rd place',race_place4:'4th place. Try again!',
  m_ru:'Russian',m_ru_s:'See Russian, pick the meaning',m_tr:'English',m_tr_s:'See the meaning, pick Russian',m_rev:'Review',m_rev_s:'Words you missed',
  choose:'Choose a word set',lv_lessons:'Lessons (book)',all:'All',words:'words',best:'best',
  settings:'Settings',s_target:'Question',s_text:'Text',s_audio:'Audio only',s_stress:'Stress marks',s_timer:'Timer',on:'On',off:'Off',s_voice:'Russian voice',s_sfx:'Sound effects',close:'Continue',
@@ -590,7 +642,7 @@ const trOf=it=>it.tr[S.lang]||it.tr.zh;
 const VER='v0.9';
 const setName=s=>s.cat?t('cat_'+s.cat)+(s.part?' '+s.part:''):s.label;
 const SHOW_LESSONS=false; // módulo de lecciones oculto por ahora
-const ROUTES=['home','dictionary','a1','a2','b1',...(SHOW_LESSONS?['lessons']:[]),'alphabet','about','premium','account','progress','terms','privacy'];
+const ROUTES=['home','race','dictionary','a1','a2','b1',...(SHOW_LESSONS?['lessons']:[]),'alphabet','about','premium','account','progress','terms','privacy'];
 function go(r,keep){ S.route=r; if(location.hash.slice(1)!==r){ try{history.replaceState(null,'','#'+r);}catch(e){} } render(); if(!keep) window.scrollTo(0,0); }
 function routeFromHash(){ const h=location.hash.slice(1); if(ROUTES.includes(h)||(SHOW_LESSONS&&/^l\d{1,2}$/.test(h))) return h; return 'home'; }
 window.addEventListener('hashchange',()=>{S.route=routeFromHash();render();window.scrollTo(0,0);});
@@ -600,7 +652,7 @@ function renderNav(){
   document.documentElement.lang=S.lang==='zh'?'zh-CN':S.lang;
   $('#t-tag').textContent=t('tag'); $('#t-foot').innerHTML=`${CFG.openAccess?`<b>${t('review_note')}</b> · `:''}${esc(t('foot'))} · ${VER} · <a href="#terms" data-go="terms">${t('nav_terms')}</a> · <a href="#privacy" data-go="privacy">${t('nav_privacy')}</a>`; setAState();
   const cur=S.route.startsWith('l')&&S.route!=='lessons'?'lessons':S.route;
-  const links=[['dictionary',t('nav_dict')],['a1','A1'],['a2','A2'],['b1','B1'],...(SHOW_LESSONS?[['lessons',t('nav_lessons')]]:[]),['alphabet',t('nav_alpha')],['progress',t('nav_progress')],['about',t('nav_about')]];
+  const links=[['race',t('nav_race')],['dictionary',t('nav_dict')],['a1','A1'],['a2','A2'],['b1','B1'],...(SHOW_LESSONS?[['lessons',t('nav_lessons')]]:[]),['alphabet',t('nav_alpha')],['progress',t('nav_progress')],['about',t('nav_about')]];
   if(!CFG.openAccess){ if(!isPrem()) links.push(['premium','★ '+t('nav_premium'),'nav-prem']);
   links.push(['account',ACC.user?t('nav_account'):t('nav_login'),'nav-acc']); }
   $('#nav').innerHTML=links.map(([r,l,c])=>`<a href="#${r}" data-go="${r}" ${c?`class="${c}"`:''} ${cur===r?'aria-current="page"':''}>${l}</a>`).join('')+
@@ -622,6 +674,7 @@ function render(){
   if(!SHOW_LESSONS&&(S.route==='lessons'||/^l\d+$/.test(S.route))) S.route='home';
   renderNav(); const v=$('#view'); const r=S.route;
   if(r==='home'){ v.innerHTML=frameHTML()+homeText(); mountFrame(); return; }
+  if(r==='race'){ v.innerHTML=frameHTML()+homeText(); if(G&&G.phase==='race') mountFrame(); else { G={phase:'menu',mode:'race'}; drawSelect(); } return; }
   stopGame();
   if(r==='dictionary') v.innerHTML=dictHTML();
   else if(r==='a1'||r==='a2'||r==='b1') v.innerHTML=levelLocked(r.toUpperCase())?paywallPage('pw_level'):levelHTML(r.toUpperCase());
@@ -655,13 +708,13 @@ const SCENE=`<svg class="scene" viewBox="0 0 1000 240" preserveAspectRatio="xMid
 const ICON=(id)=>`<svg viewBox="0 0 24 24"><use href="#${id}"/></svg>`;
 function frameHTML(){ return `<section class="frame" id="frame" aria-label="Game">${SCENE}<div id="fx"></div></section>`; }
 let G=null;
-function mountFrame(){ if(G&&G.phase==='play'){drawPlay(true);return;} if(G&&G.phase==='select'){drawSelect();return;} if(G&&G.phase==='result'){drawResult();return;} drawMenu(); }
-function fx(html){ if(!$('#fx')){ S.route='home'; try{history.replaceState(null,'','#home');}catch(e){} renderNav(); $('#view').innerHTML=frameHTML()+homeText(); } $('#fx').innerHTML=html; }
+function mountFrame(){ if(G&&G.phase==='race'){drawRace();return;} if(G&&G.phase==='raceResult'){drawRaceResult();return;} if(G&&G.phase==='play'){drawPlay(true);return;} if(G&&G.phase==='select'){drawSelect();return;} if(G&&G.phase==='result'){drawResult();return;} drawMenu(); }
+function fx(html){ if(!$('#fx')){ S.route='home'; try{history.replaceState(null,'','#home');}catch(e){} renderNav(); $('#view').innerHTML=frameHTML()+homeText(); } $('#fx').innerHTML=html; $('#frame').classList.toggle('racing',html.includes('class="fl race"')); }
 function soundBtns(){ return `<div class="snd"><button class="sbtn ${S.cfg.sfx?'':'off'}" data-tog="sfx" aria-label="${t('s_sfx')}" aria-pressed="${S.cfg.sfx}"><svg viewBox="0 0 24 24"><use href="#i-note"/></svg></button><button class="sbtn on2 ${S.cfg.voice?'':'off'}" data-tog="voice" aria-label="${t('s_voice')}" aria-pressed="${S.cfg.voice}"><svg viewBox="0 0 24 24"><use href="#i-spk"/></svg></button></div>`; }
 function drawMenu(){
   G={phase:'menu'};
   fx(`${soundBtns()}<div class="fl center"><h1 class="title"><span class="a">${t('t_a')}</span><span class="b">${t('t_b')}</span><span class="c">${t('t_c')}</span></h1>
-   <div class="menu"><button class="mbtn" data-mode="ru">${t('m_ru')}<small>${t('m_ru_s')}</small></button><button class="mbtn" data-mode="tr">${t('m_tr')}<small>${t('m_tr_s')}</small></button><button class="mbtn" data-mode="rev">${t('m_rev')}<small>${t('m_rev_s')}</small></button></div></div>
+   <div class="menu m4"><button class="mbtn" data-mode="ru">${t('m_ru')}<small>${t('m_ru_s')}</small></button><button class="mbtn" data-mode="tr">${t('m_tr')}<small>${t('m_tr_s')}</small></button><button class="mbtn" data-mode="rev">${t('m_rev')}<small>${t('m_rev_s')}</small></button><button class="mbtn" data-mode="race">${t('m_race')}<small>${t('m_race_s')}</small></button></div></div>
    <div class="corner"><button class="cbtn" data-act="settings" aria-label="${t('settings')}">${ICON('i-gear')}</button></div>`);
 }
 function drawSelect(msg){
@@ -686,7 +739,7 @@ function startSet(set){
   if(!isPrem()&&playsLeft()<=0){ drawPaywall('pw_limit'); return; }
   countPlay();
   const pool=shuffle([...set.items]);
-  startGame(pool,set.id,set.lesson);
+  if(G&&G.mode==='race') startRace(pool,set.id); else startGame(pool,set.id,set.lesson);
 }
 function startReview(){
   if(!isPrem()){ drawPaywall('pw_review'); return; }
@@ -760,7 +813,7 @@ function startTimer(){ cancelAnimationFrame(raf); G.last=performance.now();
     raf=requestAnimationFrame(loop); };
   raf=requestAnimationFrame(loop);
 }
-function stopGame(){ cancelAnimationFrame(raf); if(G&&G.phase==='play') G.phase='menu'; }
+function stopGame(){ cancelAnimationFrame(raf); if(G&&(G.phase==='play'||G.phase==='race')) G.phase='menu'; }
 function finish(done){
   cancelAnimationFrame(raf); G.phase='result'; G.done=done;
   const key=G.setId+'|'+G.mode; if(G.setId!=='review'&&G.score>(bests[key]||0)){bests[key]=G.score;store.set('bests',bests);}
@@ -777,6 +830,114 @@ function drawResult(){
     <div class="pbtns"><button class="btn" data-act="again">${t('again')}</button><button class="btn ghost" data-act="sets">${t('sets')}</button></div></div></div>
     <div class="corner"><button class="cbtn back" data-act="menu" aria-label="Back">${ICON('i-back')}</button></div>`);
 }
+/* ---------------- carrera de mecanografía ---------------- */
+const RACE_N=10;
+const KMAP={Backquote:'ё',KeyQ:'й',KeyW:'ц',KeyE:'у',KeyR:'к',KeyT:'е',KeyY:'н',KeyU:'г',KeyI:'ш',KeyO:'щ',KeyP:'з',BracketLeft:'х',BracketRight:'ъ',
+ KeyA:'ф',KeyS:'ы',KeyD:'в',KeyF:'а',KeyG:'п',KeyH:'р',KeyJ:'о',KeyK:'л',KeyL:'д',Semicolon:'ж',Quote:'э',
+ KeyZ:'я',KeyX:'ч',KeyC:'с',KeyV:'м',KeyB:'и',KeyN:'т',KeyM:'ь',Comma:'б',Period:'ю',Space:' '};
+const KLAT={}; for(const c in KMAP){ KLAT[KMAP[c]]=({Backquote:'`',BracketLeft:'[',BracketRight:']',Semicolon:';',Quote:"'",Comma:',',Period:'.',Space:''})[c]??c.slice(3).toLowerCase(); }
+const KROWS=['йцукенгшщзхъ','фывапролджэ','ячсмитьбюё'];
+const RIVALS=[['Саша','#C9862B'],['Маша','#B8472A'],['Ваня','#6B7F86']];
+const isLetter=c=>/[а-яё ]/i.test(c);
+function raceText(ru){ return strip(ru).replace(/[（(][^）)]*[）)]/g,' ').replace(/[^А-Яа-яЁё-]+/g,' ').replace(/(^|\s)-+|-+(?=\s|$)/g,' ').replace(/\s+/g,' ').trim(); }
+const carSVG=(col,me)=>`<svg class="car" viewBox="0 0 64 28" aria-hidden="true"><path d="M4 20 L6 12 Q8 9 13 9 L22 9 L29 3 Q31 2 34 2 L44 2 Q47 2 49 5 L53 10 L58 11 Q61 12 61 15 L61 20 Z" fill="${col}" stroke="#fff" stroke-width="1.6"/><path d="M25 9 L31 4 L38 4 L38 9 Z M41 4 L46 4 L50 9 L41 9 Z" fill="#DDF1F3"/><circle cx="16" cy="21" r="5" fill="#1F2F35" stroke="#fff" stroke-width="1.6"/><circle cx="48" cy="21" r="5" fill="#1F2F35" stroke="#fff" stroke-width="1.6"/>${me?'<rect x="9" y="13" width="44" height="2.4" rx="1.2" fill="#fff" opacity=".85"/>':''}</svg>`;
+function startRace(pool,setId){
+  const lv=setId.split('.')[0];
+  let words=pool.filter(it=>{const s=raceText(it.ru); return s.length>=2&&s.length<=22;}); if(words.length<3) words=pool.filter(it=>raceText(it.ru).length>=1);
+  const seen=new Set(); words=words.filter(it=>{const k=raceText(it.ru).toLowerCase(); if(seen.has(k))return false; seen.add(k); return true;}).slice(0,RACE_N);
+  const W=words.map(it=>({it,s:raceText(it.ru)}));
+  const total=W.reduce((n,w)=>n+[...w.s].filter(isLetter).length,0);
+  const best=(store.get('raceCpm',{}))[lv]||0;
+  const base=best?best*0.92:(matchMedia('(pointer:coarse)').matches?38:48);
+  G=Object.assign(G||{},{phase:'race',setId,lv,W,wi:0,ci:0,typed:0,total,errs:0,errWords:new Set(),
+    riv:RIVALS.map(([n,c],i)=>({n,c,cpm:base*[0.78,0.97,1.14][i]*(0.94+Math.random()*0.12),p:0,fin:0})),t0:0,count:3,place:0,last:0});
+  rSkip(); drawRace(); const f=$('#frame'); if(f&&(f.getBoundingClientRect().top<0||innerWidth<=640)) f.scrollIntoView({block:'start'}); raceCountdown();
+}
+function rSkip(){ const w=G.W[G.wi]; if(!w)return; while(G.ci<w.s.length&&!isLetter(w.s[G.ci])) G.ci++; }
+function raceCountdown(){
+  const tick=()=>{ if(!G||G.phase!=='race')return; const el=$('#rcount');
+    if(G.count>0){ if(el){el.textContent=G.count;el.hidden=false;} G.count--; setTimeout(tick,700); }
+    else { if(el){el.textContent=t('race_go'); el.classList.add('go'); setTimeout(()=>{ if(el.isConnected) el.hidden=true; },500);} G.count=-1; G.t0=performance.now(); G.last=G.t0; speak(G.W[0].it.ru); raceLoop(); } };
+  tick();
+}
+function raceLoop(){ cancelAnimationFrame(raf);
+  const loop=now=>{ if(!G||G.phase!=='race')return; const min=(now-G.t0)/60000;
+    G.riv.forEach(r=>{ if(r.fin)return; r.p=Math.min(1,min*r.cpm/Math.max(1,G.total)); if(r.p>=1) r.fin=now; });
+    rPaint(); raf=requestAnimationFrame(loop); };
+  raf=requestAnimationFrame(loop);
+}
+function rCpm(){ const min=G.t0?(performance.now()-G.t0)/60000:0; return min>0.02?Math.round(G.typed/min):0; }
+function rPaint(){
+  const me=$('#car-me'); if(me) me.style.setProperty('--x',G.typed/Math.max(1,G.total));
+  G.riv.forEach((r,i)=>{ const c=$('#car-'+i); if(c) c.style.setProperty('--x',r.p); });
+  const h=$('#rhud-cpm'); if(h) h.textContent=`${rCpm()} ${t('race_cpm')}`;
+}
+function rWordHTML(){
+  const w=G.W[G.wi]; if(!w) return '';
+  const chars=[...w.s].map((c,i)=>`<span class="${i<G.ci?'d':i===G.ci?'c':''}${c===' '?' sp':''}">${c===' '?'␣':esc(c)}</span>`).join('');
+  const next=G.W.slice(G.wi+1,G.wi+4).map(x=>esc(x.s)).join(' · ');
+  return `<div class="rword" id="rword">${chars}</div><div class="rmean"><button class="say" data-act="rsay" aria-label="▶">${SPK}</button><span class="ru">${esc(w.it.ru)}</span><span class="tr">${esc(trOf(w.it))}</span></div>${next?`<div class="rnext">${t('race_next')}: ${next}</div>`:''}`;
+}
+function rNextKey(){ const w=G.W[G.wi]; return w?w.s[G.ci].toLowerCase():''; }
+function rKbHTML(){
+  const nk=rNextKey();
+  const key=c=>`<button class="k ${c===nk?'nx':''}" data-k="${c}"><b>${c}</b><i>${esc(KLAT[c]||'')}</i></button>`;
+  return `<div class="rkb" id="rkb">${KROWS.map(r=>`<div class="kr">${[...r].map(key).join('')}</div>`).join('')}<div class="kr"><button class="k space ${nk===' '?'nx':''}" data-k=" ">${t('race_space')}</button></div></div>`;
+}
+function drawRace(){
+  if(!G||G.phase!=='race')return;
+  const lane=(id,name,col,x,me)=>`<div class="lane ${me?'me':''}"><span class="lname">${esc(name)}</span><div class="carw" id="${id}" style="--x:${x}">${carSVG(col,me)}</div></div>`;
+  fx(`${soundBtns()}<div class="hud"><span id="rhud-cpm">${rCpm()} ${t('race_cpm')}</span><span id="rhud-w">${t('race_words')} ${G.wi}/${G.W.length}</span><span id="rhud-e">${t('race_err')} ${G.errs}</span></div>
+   <div class="fl race"><div class="track">${lane('car-me',t('race_you'),'#2C7471',G.typed/Math.max(1,G.total),true)}${G.riv.map((r,i)=>lane('car-'+i,r.n,r.c,r.p)).join('')}<div class="finish" aria-hidden="true"></div></div>
+   <div class="rbox" id="rbox">${rWordHTML()}</div>
+   <p class="rhint">${t('race_hint')}</p>${rKbHTML()}
+   <div class="rcount" id="rcount" ${G.count<0?'hidden':''}>${G.count>=0?G.count+1:''}</div></div>
+   <div class="corner"><button class="cbtn back" data-act="sets" aria-label="Back">${ICON('i-back')}</button></div>`);
+}
+function rRefresh(){ const b=$('#rbox'); if(b) b.innerHTML=rWordHTML(); const nk=rNextKey();
+  document.querySelectorAll('#rkb .k').forEach(k=>k.classList.toggle('nx',k.dataset.k===nk));
+  const w=$('#rhud-w'); if(w) w.textContent=`${t('race_words')} ${G.wi}/${G.W.length}`; const e=$('#rhud-e'); if(e) e.textContent=`${t('race_err')} ${G.errs}`; }
+function raceKey(ch){
+  if(!G||G.phase!=='race'||G.count>=0) return;
+  const w=G.W[G.wi]; if(!w) return; const want=w.s[G.ci].toLowerCase(); ch=ch.toLowerCase();
+  const kb=document.querySelector(`#rkb .k[data-k="${ch}"]`);
+  if(ch===want||(want==='ё'&&ch==='е')){
+    G.ci++; G.typed++; rSkip();
+    if(kb){kb.classList.add('hit'); setTimeout(()=>kb.classList.remove('hit'),120);}
+    if(G.ci>=w.s.length){ G.wi++; G.ci=0; sfx(true);
+      if(G.wi>=G.W.length){ raceEnd(); return; } rSkip(); speak(G.W[G.wi].it.ru); }
+    rRefresh(); rPaint();
+  }else{
+    G.errs++; G.errWords.add(w.it.id);
+    if(kb){kb.classList.add('bad'); setTimeout(()=>kb.classList.remove('bad'),250);}
+    const c=document.querySelector('#rword .c'); if(c){c.classList.remove('err'); void c.offsetWidth; c.classList.add('err');}
+    const e=$('#rhud-e'); if(e) e.textContent=`${t('race_err')} ${G.errs}`;
+  }
+}
+function raceEnd(){
+  cancelAnimationFrame(raf); const now=performance.now(); const min=(now-G.t0)/60000;
+  G.cpm=Math.round(G.typed/Math.max(min,1e-3)); G.acc=Math.round(G.typed/Math.max(1,G.typed+G.errs)*100);
+  G.place=1+G.riv.filter(r=>r.fin&&r.fin<=now).length; G.phase='raceResult';
+  const rc=store.get('raceCpm',{}); rc[G.lv]=Math.max(rc[G.lv]||0,G.cpm); store.set('raceCpm',rc);
+  const key=G.setId+'|race'; G.newBest=G.cpm>(bests[key]||0); if(G.newBest){bests[key]=G.cpm; store.set('bests',bests);}
+  sfx(G.place===1); drawRaceResult();
+}
+function drawRaceResult(){
+  const words=G.W.map(w=>w.it);
+  fx(`${soundBtns()}<div class="fl center"><div class="panel"><h3>${t('race_place'+G.place)}</h3>
+    <div class="kpis"><div class="kpi"><b>${G.place}/4</b><span>${t('race_pos')}</span></div><div class="kpi"><b>${G.cpm}</b><span>${t('race_cpm')}</span></div><div class="kpi"><b>${G.acc}%</b><span>${t('acc')}</span></div></div>
+    <p style="margin:0 0 8px;font-size:13px;color:var(--muted);text-align:center">${t('r_best')}: ${bests[G.setId+'|race']||G.cpm} ${t('race_cpm')}${G.newBest?' ★':''}</p>
+    <ul class="miss">${words.map(w=>`<li>${sayBtn(w.ru)}<span class="w">${esc(showRu(w.ru))}${G.errWords.has(w.id)?' <b style="color:var(--buy)">✕</b>':''}</span><span class="t">${esc(trOf(w))}</span></li>`).join('')}</ul>
+    <div class="pbtns"><button class="btn" data-act="again">${t('again')}</button><button class="btn ghost" data-act="sets">${t('sets')}</button></div></div></div>
+    <div class="corner"><button class="cbtn back" data-act="menu" aria-label="Back">${ICON('i-back')}</button></div>`);
+}
+document.addEventListener('keydown',e=>{
+  if(!G||G.phase!=='race'||e.ctrlKey||e.metaKey||e.altKey||(e.target.closest&&e.target.closest('input,textarea')))return;
+  let ch=null; if(/^[а-яё]$/i.test(e.key)) ch=e.key; else if(e.key===' '||e.code==='Space') ch=' '; else if(KMAP[e.code]) ch=KMAP[e.code];
+  if(ch===null)return; e.preventDefault(); raceKey(ch);
+});
+document.addEventListener('pointerdown',e=>{ const k=e.target.closest('#rkb [data-k]'); if(k){ e.preventDefault(); raceKey(k.dataset.k); } });
+document.addEventListener('click',e=>{ if(e.target.closest('[data-act="rsay"]')&&G&&G.W&&G.W[G.wi]) speak(G.W[G.wi].it.ru,e.target.closest('button')); });
 function drawSettings(){
   if(G&&G.phase==='play'){G.paused=true;}
   const seg=(k,opts)=>`<div class="seg">${opts.map(([v,l])=>`<button data-cfg="${k}" data-v="${v}" aria-pressed="${String(S.cfg[k])===String(v)}">${l}</button>`).join('')}</div>`;
